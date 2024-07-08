@@ -7,12 +7,13 @@ import { Router } from '@angular/router';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  isLogin = localStorage.getItem("isogin");
+  isLogin = localStorage.getItem("isLogin");
   constructor(private route: Router) { }
 
   ngOnInit(): void {
   }
   logOut(){
+    localStorage.removeItem('isLogin');
     this.route.navigate(['../','account','auth','login']);
   }
   changPassword(){

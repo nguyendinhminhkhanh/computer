@@ -11,6 +11,7 @@
       >
         Đăng ký
       </h1>
+      <p *ngIf="checkEmail" style=" display: flex; justify-content: center; align-items: center;color: red; font-weight: bold;"><i class="bi bi-x-circle" style="font-weight: bold;"></i> Email đã tồn tại</p>
       <!-- Form -->
       <form [formGroup]="rfContact">
         <div
@@ -53,6 +54,7 @@
             formControlName="password"
           />
         </div>
+      <p *ngIf="checkPass"  style="display: flex; justify-content: center; align-items: center;color: red; font-weight: bold; margin: 0;"><i class="bi bi-x-circle" style="font-weight: bold;"></i>Hãy nhập chính xác lại mật khẩu</p>
         <div
           style="
             display: flex;
@@ -70,6 +72,8 @@
         </div>
       </form>
       <!--  -->
+      <p *ngIf="checkFullInfo" style=" display: flex; justify-content: center; align-items: center;color: red; font-weight: bold; margin: 0;"><i class="bi bi-x-circle" style="font-weight: bold;"></i>Hãy nhập đầy đủ thông tin</p>
+
       <div
         style="
           display: flex;

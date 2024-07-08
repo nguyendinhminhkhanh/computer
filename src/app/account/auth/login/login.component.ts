@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   rfContact: any;
+  checkLogin: any;
   constructor(private fb: FormBuilder, private route: Router) {}
   public dataUser = <any>[];
   ngOnInit(): void {
@@ -19,6 +20,7 @@ export class LoginComponent {
   }
 
   onSignIn() {
+    this.checkLogin = false;
     this.dataUser =
       (JSON.parse(localStorage.getItem('user') || '{}') as string) || <any>[];
     if (
@@ -31,9 +33,10 @@ export class LoginComponent {
       console.log('Đăng nhập thành công');
       this.route.navigate(['../','pages','general']);
       var nameEmail = this.rfContact.value.email;
-      localStorage.setItem('isogin', nameEmail);
+      localStorage.setItem('isLogin', nameEmail);
     } else {
       console.warn('Thông tin đăng nhập không chính xác!');
+      this.checkLogin = true;
       this.rfContact.reset();
     }
   }

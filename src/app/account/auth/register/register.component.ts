@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 })
 export class RegisterComponent {
   rfContact: any;
+  checkEmail: any;
+  checkPass: any;
+  checkFullInfo: any;
   public dataUser = <any>[];
   constructor(private fb: FormBuilder, private route: Router) {}
 
@@ -26,6 +29,10 @@ export class RegisterComponent {
   }
 
   onRegister() {
+    this.checkEmail = false;
+    this.checkPass = false;
+    this.checkFullInfo = false;
+
     this.dataUser =
       JSON.parse(localStorage.getItem('user') as string) || <any>[];
     if (
@@ -34,13 +41,16 @@ export class RegisterComponent {
       )
     ) {
       console.warn('Email này đã tồn tại');
+      this.checkEmail = true;
       this.rfContact.reset();
       return;
     } else if (this.rfContact.invalid) {
       console.warn('Nhập đầy đủ thông tin đăng kí');
-      this.rfContact.reset();
+      this.checkFullInfo = true;
+      // this.rfContact.reset();
     }else if(this.rfContact.value.password != this.rfContact.value.retypePassword){
       console.warn("Hãy nhập chính xác mật khẩu");
+      this.checkPass = true;
     }else {
       this.dataUser.push({
         email: this.rfContact.value.email,

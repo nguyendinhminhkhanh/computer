@@ -4,6 +4,7 @@
       <h1 style="display: flex; align-items: center; justify-content: center; font-weight: bold;">
         Đăng nhập
       </h1>
+      <p *ngIf="checkLogin" style=" display: flex; justify-content: center; align-items: center;color: red; font-weight: bold;"><i class="bi bi-x-circle" style="font-weight: bold;"></i> Thông tin đăng nhập không chính xác</p>
       <!-- Form -->
       <form [formGroup]="rfContact">
         <div
