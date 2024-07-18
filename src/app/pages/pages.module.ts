@@ -6,7 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { SystemComponent } from './system/system.component';
 import { GeneralComponent } from './general/general.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     PagesRoutingModule,
+    FormsModule,
     ReactiveFormsModule
   ]
 })

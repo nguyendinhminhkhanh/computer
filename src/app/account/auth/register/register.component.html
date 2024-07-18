@@ -19,9 +19,9 @@
         >
           <input
             type="text"
-            placeholder="Email"
+            placeholder="Tên"
             style="width: 90%; padding: 10px; border-radius: 5px"
-            formControlName="email"
+            formControlName="name"
           />
         </div>
         <div
@@ -34,9 +34,9 @@
         >
           <input
             type="text"
-            placeholder="Số điện thoại"
+            placeholder="Email"
             style="width: 90%; padding: 10px; border-radius: 5px"
-            formControlName="phone"
+            formControlName="email"
           />
         </div>
         <div
@@ -54,7 +54,7 @@
             formControlName="password"
           />
         </div>
-      <p *ngIf="checkPass"  style="display: flex; justify-content: center; align-items: center;color: red; font-weight: bold; margin: 0;"><i class="bi bi-x-circle" style="font-weight: bold;"></i>Hãy nhập chính xác lại mật khẩu</p>
+      <!-- <p *ngIf="checkPass"  style="display: flex; justify-content: center; align-items: center;color: red; font-weight: bold; margin: 0;"><i class="bi bi-x-circle" style="font-weight: bold;"></i>Hãy nhập chính xác lại mật khẩu</p>
         <div
           style="
             display: flex;
@@ -69,7 +69,7 @@
             style="width: 90%; padding: 10px; border-radius: 5px"
             formControlName="retypePassword"
           />
-        </div>
+        </div> -->
       </form>
       <!--  -->
       <p *ngIf="checkFullInfo" style=" display: flex; justify-content: center; align-items: center;color: red; font-weight: bold; margin: 0;"><i class="bi bi-x-circle" style="font-weight: bold;"></i>Hãy nhập đầy đủ thông tin</p>

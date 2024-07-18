@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { AccountRoutingModule } from './account-routing.module';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -9,6 +10,7 @@ import { AccountRoutingModule } from './account-routing.module';
   imports: [
     CommonModule,
     AccountRoutingModule,
+    HttpClientModule
   ]
 })
 export class AccountModule { }
